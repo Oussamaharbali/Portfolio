@@ -21,6 +21,4 @@ Je suis à la recherche d'un poste d'ingénieur en automatisation ou en cybersé
 
 **Contact :**
 
-oussama.harbali@etu.univ-lyon1.fr
-
-[Lien vers votre CV en ligne (si vous en avez un)]
+oussama.harbali@etu.univ-poitiers.fr
