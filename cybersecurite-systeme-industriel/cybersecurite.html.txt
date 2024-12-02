@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>LOL</title>
+  <link rel="stylesheet" href="../style.css"> </head>
+<body>
+  <header>
+    </header>
+
+  <section>
+    <h2>"-"</h2>
+    <p>Ce projet consistait à ...</p>
+    </section>
+
+  <footer>
+    </footer>
+</body>
+</html>
