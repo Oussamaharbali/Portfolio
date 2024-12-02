@@ -1,56 +1,85 @@
+/* Polices Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 /* Styles généraux */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
-  background-color: #f8f8f8;
+  background-color: #f4f4f4;
   color: #333;
   line-height: 1.6;
 }
 
+/* Typographie */
+h1, h2, h3 {
+  font-weight: 600; 
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/* Liens */
 a {
-  color: #007bff; /* Bleu pour les liens */
+  color: #007bff; 
   text-decoration: none;
+  transition: color 0.3s ease; /* Effet de transition sur le changement de couleur */
 }
 
 a:hover {
-  text-decoration: underline;
+  color: #0056b3; 
+}
+
+/* Conteneur principal */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 /* En-tête */
 header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
+  background-color: #fff;
+  padding: 30px 20px;
+  border-bottom: 1px solid #ddd;
+  display: flex; /* Pour aligner le titre et la navigation */
+  justify-content: space-between; /* Espace entre le titre et la navigation */
+  align-items: center; /* Alignement vertical au centre */
 }
 
 header h1 {
   margin: 0;
-  font-size: 2.5em;
 }
 
-nav {
-  margin-top: 10px;
+/* Navigation */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-nav a {
-  margin: 0 15px;
-  color: #fff;
-  font-weight: bold;
+nav li {
+  display: inline-block; /* Afficher les éléments de la liste en ligne */
+  margin-left: 20px;
 }
 
 /* Sections */
 section {
-  padding: 40px 20px;
+  padding: 40px 0;
 }
 
-section h2 {
-  color: #333;
-}
-
-/* Section "À propos" */
+/* Section "À propos de moi" */
 #a-propos {
   background-color: #fff;
+  padding: 30px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -58,14 +87,14 @@ section h2 {
 /* Section "Projets" */
 #projets .projet {
   background-color: #fff;
+  padding: 30px;
+  margin-bottom: 30px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
-  padding: 20px;
 }
 
 #projets h3 {
-  color: #007bff; /* Bleu pour les titres de projets */
+  color: #007bff;
 }
 
 /* Section "Contact" */
@@ -73,10 +102,14 @@ section h2 {
   text-align: center;
 }
 
+#contact p {
+  margin-bottom: 20px;
+}
+
 /* Pied de page */
 footer {
   background-color: #333;
   color: #fff;
   text-align: center;
-  padding: 10px;
+  padding: 20px;
 }
