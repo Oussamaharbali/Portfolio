@@ -1,5 +1,5 @@
 /* Importation de la police Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
 /* Réinitialisation des marges et paddings par défaut */
 * {
@@ -9,8 +9,8 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f5f5f5; 
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f8f8f8; 
   color: #333;
   line-height: 1.6;
 }
@@ -26,41 +26,76 @@ body {
 
 /* En-tête */
 header {
-  background-color: #007bff; 
+  background-color: #333; 
   color: #fff;
   padding: 20px;
   text-align: center;
   margin-bottom: 30px; 
+  position: relative; /* Pour le positionnement de la barre décorative */
+  overflow: hidden; /* Pour masquer la barre décorative en dehors de l'en-tête */
 }
 
 header h1 {
   font-size: 2.5rem;
+  z-index: 2; /* Assurer que le texte est au-dessus de la barre décorative */
+  position: relative; /* Pour le positionnement relatif au parent */
+}
+
+/* Barre décorative animée */
+header::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -100%;
+  width: 200%;
+  height: 100px;
+  background-color: #007bff; 
+  transform: translateY(-50%) rotate(-10deg);
+  animation: slide 10s linear infinite; /* Animation de la barre */
+}
+
+@keyframes slide {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
 }
 
 /* Navigation */
 nav ul {
   list-style: none; 
+  text-align: center; 
+  margin-top: 20px; 
 }
 
 nav li {
   display: inline-block; 
-  margin: 0 10px; 
+  margin: 0 15px; 
 }
 
 nav a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
+  transition: transform 0.2s ease, color 0.2s ease; /* Transitions */
+}
+
+nav a:hover {
+  transform: translateY(-3px); 
+  color: #f0ad4e; 
 }
 
 /* Sections */
 section {
-  padding: 20px 0; 
+  padding: 40px 0; 
 }
 
 section h2 {
   font-size: 2rem;
-  margin-bottom: 15px; 
+  margin-bottom: 20px; 
+  text-align: center; 
 }
 
 /* Section "À propos de moi" */
@@ -70,25 +105,42 @@ section h2 {
 
 /* Section "Projets" */
 #projets .projet {
-  background-color: #f9f9f9; 
-  border: 1px solid #ddd; 
-  padding: 20px;
-  margin-bottom: 20px; 
-  border-radius: 5px; 
+  background-color: #fff; 
+  padding: 30px;
+  margin-bottom: 30px; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transitions */
+  overflow: hidden; /* Pour l'effet de survol avec le lien */
+  position: relative; /* Pour le positionnement du lien */
+}
+
+#projets .projet:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
 }
 
 #projets h3 {
-  color: #007bff; 
+  color: #333; 
   margin-bottom: 10px; 
 }
 
-#projets a {
-  display: inline-block; 
-  padding: 8px 15px; 
-  background-color: #007bff; 
+#projets .projet a {
+  display: block; 
+  position: absolute; 
+  bottom: 0; 
+  left: 0;
+  width: 100%;
+  text-align: center; 
+  padding: 15px 0; 
+  background-color: rgba(0, 123, 255, 0.8); 
   color: #fff;
-  border-radius: 5px; 
-  margin-top: 15px; 
+  opacity: 0; /* Caché par défaut */
+  transition: opacity 0.3s ease; /* Transition */
+}
+
+#projets .projet:hover a {
+  opacity: 1; 
 }
 
 /* Section "Contact" */
@@ -108,7 +160,9 @@ section h2 {
 /* Pied de page */
 footer {
   text-align: center;
-  padding: 10px 0; 
+  padding: 20px 0; 
   font-size: 0.9rem; 
   color: #666; 
+  background-color: #333; 
+  color: #fff;
 }
